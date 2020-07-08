@@ -56,6 +56,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /auto_login
   def auto_login
     render json: @user
   end
