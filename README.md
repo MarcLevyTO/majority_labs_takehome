@@ -20,15 +20,15 @@ The user is saved to cache on creation and upon lookup.
 
 ### GET /users
 
-- Get list of all users
+Get list of all users
 
 ### GET /users/:id
 
-- Get info on 1 user
+Get info on a user
 
 ### POST /users
 
-- Body Example
+Body Example
 
 ```
 {
@@ -42,18 +42,17 @@ The user is saved to cache on creation and upon lookup.
 
 ### PUT /users/:id
 
-- Update a user
-- Note: Not tested at all, future consideration
+Updates a user.
+Note: Not tested at all, future consideration
 
 ### DELETE /users/:id
 
-- Archive a user
+Archive a user
 
 ### POST /login
 
-- Login user
-
-- Body Example
+Login user
+Body Example
 
 ```
 {
@@ -64,4 +63,4 @@ The user is saved to cache on creation and upon lookup.
 
 ### GET /auto_login
 
-- Test use of JWT token to retrieve user
+Test use of JWT token to retrieve user
