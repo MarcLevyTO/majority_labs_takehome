@@ -18,6 +18,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rack-cors'
 gem 'jwt'
 
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'redis-rack-cache'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

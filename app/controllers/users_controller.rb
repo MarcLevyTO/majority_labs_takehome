@@ -17,8 +17,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      puts "gets to here"
       token = encode_token({ user_id: @user.id })
+      redis_user = 'user_id_' + @user.id.to_s
+      $redis.set(redis_user, @user.to_json)
       render json: { user: @user, token: token }, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -62,7 +63,16 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      redis_user = 'user_id_' + params[:id]
+      user = $redis.get(redis_user)
+      if user.nil?
+        @user = User.find(params[:id])
+        # Store in cache as json string
+        $redis.set(redis_user, @user.to_json)
+      else
+        # Retrieve from cache and convert to User object
+        @user = User.new.from_json(user)
+      end
     end
 
     # Only allow a trusted parameter "white list" through.
