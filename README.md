@@ -1,5 +1,15 @@
 # Majority Labs Take Home
 
+## DEMO API
+
+You can try out the API on a heroku instance. (Give it a second to warm up if the server is on standby).
+
+https://marc-levy-majority-labs-server.herokuapp.com
+
+## GitHub Location
+
+https://github.com/MarcLevyTO/majority_labs_takehome
+
 ## Install
 
 - Install Ruby on Rails and Postgresql - https://gorails.com/setup/osx/10.15-catalina
